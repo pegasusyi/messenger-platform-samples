@@ -363,7 +363,9 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  // sendTextMessage(senderID, "Postback called");
+  var text = "Hello! I'm Yi's double, Yi Yi. I know Yi for a long time. I am very willing to help you know Yi better.";
+  sendMyQuickReply(senderID, text);
 }
 
 /*
@@ -718,6 +720,76 @@ function sendQuickReply(recipientId) {
 
   callSendAPI(messageData);
 }
+
+/*
+ * Send a message with Quick Reply buttons.
+ *
+ */
+function sendMyQuickReply(recipientId, text) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: text,
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Unfiltered things",
+          "payload":"Unfiltered things"
+        },
+        {
+          "content_type":"text",
+          "title":"What drives Yi nuts",
+          "payload":"What drives Yi nuts"
+        },
+        {
+          "content_type":"text",
+          "title":"Yi's quirks",
+          "payload":"Yi's quirks"
+        },
+        {
+          "content_type":"text",
+          "title":"Earn gold stars",
+          "payload":"Earn gold stars"
+        },
+        {
+          "content_type":"text",
+          "title":"Qualities Yi values",
+          "payload":"Qualities Yi values"
+        },
+        {
+          "content_type":"text",
+          "title":"Misunderstanding",
+          "payload":"Misunderstanding"
+        },
+        {
+          "content_type":"text",
+          "title":"Coach people",
+          "payload":"Coach people"
+        },
+        {
+          "content_type":"text",
+          "title":"Communicate with Yi",
+          "payload":"Communicate with Yi"
+        },
+        {
+          "content_type":"text",
+          "title":"Convince Yi",
+          "payload":"Convince Yi"
+        },
+        {
+          "content_type":"text",
+          "title":"Give/Get feedback",
+          "payload":"Give/Get feedback"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
 
 /*
  * Send a read receipt to indicate the message has been read
