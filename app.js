@@ -234,6 +234,7 @@ function receivedMessage(event) {
   var messageText = message.text;
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
+  var text;
 
   if (isEcho) {
     // Just logging message echoes to console
@@ -247,7 +248,7 @@ function receivedMessage(event) {
 
     switch (quickReplyPayload) {
           case "Unfiltered things":
-            var text = "Yi was born in a small city in China in the northeast. The weather is similar to New York. Then when Yi was about 7 years old, his family moved to southern China.\nYi spent 7 years in Columbus OH before he moved to New York and joined Kasisto.";
+            text = "Yi was born in a small city in China in the northeast. The weather is similar to New York. Then when Yi was about 7 years old, his family moved to southern China.\nYi spent 7 years in Columbus OH before he moved to New York and joined Kasisto.";
             sendMyQuickReply(senderID, text);
             break;
 
@@ -256,53 +257,53 @@ function receivedMessage(event) {
             break;
 
           case "Nuts and quirks":
-            var text = "Yi is Pisces, so he can tolerate pretty much anything. He shakes his legs intermittently when he sits.";
+            text = "Yi is Pisces, so he can tolerate pretty much anything. He shakes his legs intermittently when he sits.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Earn gold stars",
-            var text = "Play ping pong with Yi and beat Yi 4-0 in a best 4 of 7 games.\nIf you do, he will look for you, he will find you... and he will give you a gold star in person.";
+            text = "Play ping pong with Yi and beat Yi 4-0 in a best 4 of 7 games.\nIf you do, he will look for you, he will find you... and he will give you a gold star in person.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Qualities Yi values",
-            var text = "Honest. The ability to get things done.";
+            text = "Honest. The ability to get things done.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Misunderstanding",
-            var text = "In a discussion he often expresses strong opinions. He might look angry. His voice might be raised (slightly).\nIf it happens, I promise nothing is personal at all. It is one of the syndromes Yi tries to overcome in his life.";
+            text = "In a discussion he often expresses strong opinions. He might look angry. His voice might be raised (slightly).\nIf it happens, I promise nothing is personal at all. It is one of the syndromes Yi tries to overcome in his life.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Coach people",
-            var text = "Yi has never been in a position where he can coach people to develop their talents. The closest I can think of is Yi being a TA in the graduate school.\nI think the best way to inspire other people is to just be yourslef. In fact, the best friendship relies on mutual inspiration to each other.";
+            text = "Yi has never been in a position where he can coach people to develop their talents. The closest I can think of is Yi being a TA in the graduate school.\nI think the best way to inspire other people is to just be yourslef. In fact, the best friendship relies on mutual inspiration to each other.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Communicate with Yi",
-            var text = "The best way to communicate with Yi is to speak fluent Chinese.";
+            text = "The best way to communicate with Yi is to speak fluent Chinese.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Convince Yi":
-            var text = "Give Yi a deadline and he will finish it by then.";
+            text = "Give Yi a deadline and he will finish it by then.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Give/Get feedback":
-            var text = "If you don't ask Yi for feedback, he will never give any feedback. He observes. Then he adapts. He would deeply appreciate any feedback in any form.";
+            text = "If you don't ask Yi for feedback, he will never give any feedback. He observes. Then he adapts. He would deeply appreciate any feedback in any form.";
             sendMyQuickReply(senderID, text);
             break;
 
           default:
-            var text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
+            text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
             sendMyQuickReply(senderID, text);
     }
     // sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
-  var text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
+  text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
   sendMyQuickReply(senderID, text);
 
   /*
