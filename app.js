@@ -235,7 +235,7 @@ function receivedMessage(event) {
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
   var text;
-/*
+
   if (isEcho) {
     // Just logging message echoes to console
     console.log("Received echo for message %s and app %d with metadata %s", 
@@ -261,27 +261,27 @@ function receivedMessage(event) {
             sendMyQuickReply(senderID, text);
             break;
 
-          case "Earn gold stars",
+          case "Earn gold stars":
             text = "Play ping pong with Yi and beat Yi 4-0 in a best 4 of 7 games.\nIf you do, he will look for you, he will find you... and he will give you a gold star in person.";
             sendMyQuickReply(senderID, text);
             break;
 
-          case "Qualities Yi values",
+          case "Qualities Yi values":
             text = "Honest. The ability to get things done.";
             sendMyQuickReply(senderID, text);
             break;
 
-          case "Misunderstanding",
+          case "Misunderstanding":
             text = "In a discussion he often expresses strong opinions. He might look angry. His voice might be raised (slightly).\nIf it happens, I promise nothing is personal at all. It is one of the syndromes Yi tries to overcome in his life.";
             sendMyQuickReply(senderID, text);
             break;
 
-          case "Coach people",
+          case "Coach people":
             text = "Yi has never been in a position where he can coach people to develop their talents. The closest I can think of is Yi being a TA in the graduate school.\nI think the best way to inspire other people is to just be yourslef. In fact, the best friendship relies on mutual inspiration to each other.";
             sendMyQuickReply(senderID, text);
             break;
 
-          case "Communicate with Yi",
+          case "Communicate with Yi":
             text = "The best way to communicate with Yi is to speak fluent Chinese.";
             sendMyQuickReply(senderID, text);
             break;
@@ -303,7 +303,7 @@ function receivedMessage(event) {
     // sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
-  */
+
   text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
   sendMyQuickReply(senderID, text);
 
