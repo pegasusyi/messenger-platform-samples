@@ -235,7 +235,7 @@ function receivedMessage(event) {
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
   var text;
-
+/*
   if (isEcho) {
     // Just logging message echoes to console
     console.log("Received echo for message %s and app %d with metadata %s", 
@@ -303,6 +303,7 @@ function receivedMessage(event) {
     // sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
+  */
   text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
   sendMyQuickReply(senderID, text);
 
