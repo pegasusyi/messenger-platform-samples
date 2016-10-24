@@ -245,6 +245,10 @@ function receivedMessage(event) {
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
 
+    switch (quickReplyPayload) {
+      case '':
+    }
+
     sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
@@ -364,7 +368,7 @@ function receivedPostback(event) {
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
   // sendTextMessage(senderID, "Postback called");
-  var text = "Hello! I'm Yi's double, Yi Yi. I know Yi for a long time. I am very willing to help you know Yi better.";
+  var text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time. I am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
   sendMyQuickReply(senderID, text);
 }
 
@@ -740,13 +744,13 @@ function sendMyQuickReply(recipientId, text) {
         },
         {
           "content_type":"text",
-          "title":"What drives Yi nuts",
-          "payload":"What drives Yi nuts"
+          "title":"↑↑↓↓←→←→BA",
+          "payload":"↑↑↓↓←→←→BA"
         },
         {
           "content_type":"text",
-          "title":"Yi's quirks",
-          "payload":"Yi's quirks"
+          "title":"Nuts and quirks",
+          "payload":"Nuts and quirks"
         },
         {
           "content_type":"text",
