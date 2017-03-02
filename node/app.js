@@ -257,42 +257,42 @@ function receivedMessage(event) {
             break;
 
           case "Nuts and quirks":
-            text = "Yi is Pisces, so he can tolerate pretty much anything. He shakes his legs intermittently when he sits.";
+            text = "Long and unproductive meetings drive Yi nuts. He shakes his legs intermittently when he sits.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Earn gold stars":
-            text = "Play ping pong with Yi and beat Yi 4-0 in a best 4 of 7 games.\nIf you do, he will look for you, he will find you... and he will give you a gold star in person.";
+            text = "Play ping pong with Yi and beat him.\nIf you do, he will look for you, he will find you...";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Qualities Yi values":
-            text = "Honest. The ability to get things done.";
+            text = "Honest. Straightforward. Transparent. The ability to get things done, fast. Not afraid of making mistakes.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Misunderstanding":
-            text = "In a discussion he often expresses strong opinions. He might look angry. His voice might be raised (slightly).\nIf it happens, I promise nothing is personal at all. It is one of the syndromes Yi tries to overcome in his life.";
+            text = "In a discussion Yi might look angry and his voice might be raised.\nIf that happens unfortunately, I promise nothing is personal. It just means that Yi is very angry, indeed.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Coach people":
-            text = "Yi has never been in a position where he can coach people to develop their talents. The closest I can think of is Yi being a TA in the graduate school.\nI think the best way to inspire other people is to just be yourslef. In fact, the best friendship relies on mutual inspiration to each other.";
+            text = "It's all in people's mind. If two people share the same belief, they will collaborate well with each other. Yi believes the best friendship relies on mutual inspiration.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Communicate with Yi":
-            text = "The best way to communicate with Yi is to speak fluent Chinese.";
+            text = "The best way to communicate with Yi is to speak fluent Chinese, face-to-face.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Convince Yi":
-            text = "Give Yi a deadline and he will finish it by then.";
+            text = "Yi wants to know a bigger picture behind the task, not just the task itself. Yi does not like being fed with tasks that come from the middle of nowhere.";
             sendMyQuickReply(senderID, text);
             break;
 
           case "Give/Get feedback":
-            text = "If you don't ask Yi for feedback, he will never give any feedback. He observes. Then he adapts. He would deeply appreciate any feedback in any form.";
+            text = "If you don't ask Yi for feedback, it is very unlikely for him to give you any feedback proactively. On the other hand, he is open to any feedback; straight face-to-face feedback is even better.";
             sendMyQuickReply(senderID, text);
             break;
 
