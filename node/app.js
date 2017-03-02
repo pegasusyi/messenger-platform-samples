@@ -234,6 +234,7 @@ function receivedMessage(event) {
   var messageText = message.text;
   var messageAttachments = message.attachments;
   var quickReply = message.quick_reply;
+  var text;
 
   if (isEcho) {
     // Just logging message echoes to console
@@ -245,10 +246,68 @@ function receivedMessage(event) {
     console.log("Quick reply for message %s with payload %s",
       messageId, quickReplyPayload);
 
-    sendTextMessage(senderID, "Quick reply tapped");
+    switch (quickReplyPayload) {
+          case "Unfiltered things":
+            text = "Yi was born in a small city in China in the northeast. The weather is similar to New York. Then when Yi was about 7 years old, his family moved to southern China.\nYi spent 7 years in Columbus OH before he moved to New York and joined Kasisto.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          case "↑↑↓↓←→←→BA":
+            sendMyGifMessage(senderID);
+            break;
+
+          case "Nuts and quirks":
+            text = "Yi is Pisces, so he can tolerate pretty much anything. He shakes his legs intermittently when he sits.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          case "Earn gold stars":
+            text = "Play ping pong with Yi and beat Yi 4-0 in a best 4 of 7 games.\nIf you do, he will look for you, he will find you... and he will give you a gold star in person.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          case "Qualities Yi values":
+            text = "Honest. The ability to get things done.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          case "Misunderstanding":
+            text = "In a discussion he often expresses strong opinions. He might look angry. His voice might be raised (slightly).\nIf it happens, I promise nothing is personal at all. It is one of the syndromes Yi tries to overcome in his life.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          case "Coach people":
+            text = "Yi has never been in a position where he can coach people to develop their talents. The closest I can think of is Yi being a TA in the graduate school.\nI think the best way to inspire other people is to just be yourslef. In fact, the best friendship relies on mutual inspiration to each other.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          case "Communicate with Yi":
+            text = "The best way to communicate with Yi is to speak fluent Chinese.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          case "Convince Yi":
+            text = "Give Yi a deadline and he will finish it by then.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          case "Give/Get feedback":
+            text = "If you don't ask Yi for feedback, he will never give any feedback. He observes. Then he adapts. He would deeply appreciate any feedback in any form.";
+            sendMyQuickReply(senderID, text);
+            break;
+
+          default:
+            text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
+            sendMyQuickReply(senderID, text);
+    }
+    // sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
 
+  text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
+  sendMyQuickReply(senderID, text);
+
+  /*
   if (messageText) {
 
     // If we receive a text message, check to see if it matches any special
@@ -313,6 +372,8 @@ function receivedMessage(event) {
   } else if (messageAttachments) {
     sendTextMessage(senderID, "Message with attachment received");
   }
+  */
+
 }
 
 
@@ -363,7 +424,9 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to 
   // let them know it was successful
-  sendTextMessage(senderID, "Postback called");
+  // sendTextMessage(senderID, "Postback called");
+  var text = "Hello! I'm Yi's double, Yi Yi.\nI know Yi for a long time.\nI am very willing to help you know Yi better.\nYi was manufactured in 1986.\nMade in China";
+  sendMyQuickReply(senderID, text);
 }
 
 /*
@@ -447,6 +510,78 @@ function sendGifMessage(recipientId) {
 
   callSendAPI(messageData);
 }
+
+function sendMyGifMessage(recipientId) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: SERVER_URL + "/assets/Contra.gif"
+        }
+      },
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Unfiltered things",
+          "payload":"Unfiltered things"
+        },
+        {
+          "content_type":"text",
+          "title":"↑↑↓↓←→←→BA",
+          "payload":"↑↑↓↓←→←→BA"
+        },
+        {
+          "content_type":"text",
+          "title":"Nuts and quirks",
+          "payload":"Nuts and quirks"
+        },
+        {
+          "content_type":"text",
+          "title":"Earn gold stars",
+          "payload":"Earn gold stars"
+        },
+        {
+          "content_type":"text",
+          "title":"Qualities Yi values",
+          "payload":"Qualities Yi values"
+        },
+        {
+          "content_type":"text",
+          "title":"Misunderstanding",
+          "payload":"Misunderstanding"
+        },
+        {
+          "content_type":"text",
+          "title":"Coach people",
+          "payload":"Coach people"
+        },
+        {
+          "content_type":"text",
+          "title":"Communicate with Yi",
+          "payload":"Communicate with Yi"
+        },
+        {
+          "content_type":"text",
+          "title":"Convince Yi",
+          "payload":"Convince Yi"
+        },
+        {
+          "content_type":"text",
+          "title":"Give/Get feedback",
+          "payload":"Give/Get feedback"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+
 
 /*
  * Send audio using the Send API.
@@ -718,6 +853,76 @@ function sendQuickReply(recipientId) {
 
   callSendAPI(messageData);
 }
+
+/*
+ * Send a message with Quick Reply buttons.
+ *
+ */
+function sendMyQuickReply(recipientId, text) {
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      text: text,
+      quick_replies: [
+        {
+          "content_type":"text",
+          "title":"Unfiltered things",
+          "payload":"Unfiltered things"
+        },
+        {
+          "content_type":"text",
+          "title":"↑↑↓↓←→←→BA",
+          "payload":"↑↑↓↓←→←→BA"
+        },
+        {
+          "content_type":"text",
+          "title":"Nuts and quirks",
+          "payload":"Nuts and quirks"
+        },
+        {
+          "content_type":"text",
+          "title":"Earn gold stars",
+          "payload":"Earn gold stars"
+        },
+        {
+          "content_type":"text",
+          "title":"Qualities Yi values",
+          "payload":"Qualities Yi values"
+        },
+        {
+          "content_type":"text",
+          "title":"Misunderstanding",
+          "payload":"Misunderstanding"
+        },
+        {
+          "content_type":"text",
+          "title":"Coach people",
+          "payload":"Coach people"
+        },
+        {
+          "content_type":"text",
+          "title":"Communicate with Yi",
+          "payload":"Communicate with Yi"
+        },
+        {
+          "content_type":"text",
+          "title":"Convince Yi",
+          "payload":"Convince Yi"
+        },
+        {
+          "content_type":"text",
+          "title":"Give/Get feedback",
+          "payload":"Give/Get feedback"
+        }
+      ]
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
 
 /*
  * Send a read receipt to indicate the message has been read
