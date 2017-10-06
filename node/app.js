@@ -248,7 +248,7 @@ function receivedMessage(event) {
 
     switch (quickReplyPayload) {
           case "Unfiltered things":
-            text = "Yi was born in a small city in China in the northeast. The weather is similar to New York. Then when Yi was about 7 years old, his family moved to southern China.\nYi spent 7 years in Columbus OH before he moved to New York and joined Kasisto.";
+            text = "There're two kinds of people in the world, the ones that hold grudges and the ones who don't. I am a person who holds grudges, and I believe it is a good thing, because grudges can push you to work harder to succeed, like what the catalyst does to a chemical reaction. When people say they don't hold grudges because holding grudges can cause cancer, they are lying.";
             sendMyQuickReply(senderID, text);
             break;
 
@@ -257,7 +257,7 @@ function receivedMessage(event) {
             break;
 
           case "Nuts and quirks":
-            text = "Long and unproductive meetings drive Yi nuts. He shakes his legs intermittently when he sits.";
+            text = "";
             sendMyQuickReply(senderID, text);
             break;
 
